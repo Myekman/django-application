@@ -16,6 +16,8 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+development = os.environ.get('DEVELOPMENT', True)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -29,10 +31,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
 # ALLOWED_HOSTS = ['127.0.0.1', '8000-myekman-djangoapplicati-zq7g633yhnf.ws-eu100.gitpod.io', 'django-application-91fc53dd2add.herokuapp.com']
-ALLOWED_HOSTS = ['*', 'django-application-91fc53dd2add.herokuapp.com', '8000-myekman-djangoapplicati-zq7g633yhnf.ws-eu100.gitpod.io', '127.0.0.1']
+ALLOWED_HOSTS = ['django-application-91fc53dd2add.herokuapp.com', '8000-myekman-djangoapplicati-zq7g633yhnf.ws-eu100.gitpod.io', '127.0.0.1']
 
 # Application definition
 
